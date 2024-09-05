@@ -58,7 +58,7 @@ To configure the application for local development, create or update the `local.
 - **SQLConnectionString:** Your connection string to the SQL Server database.
 - **ServiceBusConnectionString:** Your connection string for the Azure Service Bus.
 - **QueueName:** The name of the Service Bus queue to which messages will be sent.
-- 
+ 
 ## LOGS:
 
 To configure logging for your Azure Functions, you can modify the host.json file as follows. This allows you to control the log levels and ensure that all log types are captured:
