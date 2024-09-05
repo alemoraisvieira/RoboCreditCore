@@ -58,13 +58,40 @@ To configure the application for local development, create or update the `local.
 - **SQLConnectionString:** Your connection string to the SQL Server database.
 - **ServiceBusConnectionString:** Your connection string for the Azure Service Bus.
 - **QueueName:** The name of the Service Bus queue to which messages will be sent.
+- 
+## LOGS:
 
+To configure logging for your Azure Functions, you can modify the host.json file as follows. This allows you to control the log levels and ensure that all log types are captured:
+Explanation:
+
+- **logLevel.default**: Sets the default log level to Information. You can change this to Debug, Warning, Error, etc., depending on the level of detail you want.
+- **logLevel.Function**: Sets the log level for function-specific logs, allowing you to capture more detailed logs such as Debug.
+- **logLevel.Host**: Sets the log level for the Azure Functions host logs (like startup/shutdown), which can be set to Trace for detailed information.
+```json
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      },
+      "enableLiveMetricsFilters": true
+    },
+    "logLevel": {
+      "default": "Information",
+      "Function": "Debug",
+      "Host": "Trace"
+    }
+  }
+}
+```
 - ### Azure Development
 
 For deployment on Azure please follow this tutorial:
 https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs?pivots=isolated
 
-make sure to configure the environment variables in the Azure Portal,
+make sure to configure the environment variables in the Azure Portal
 
 ## Contributing
 Contributions are welcome! Please submit a pull request with your changes or improvements.
