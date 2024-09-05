@@ -86,7 +86,7 @@ Explanation:
   }
 }
 ```
-- ### Azure Development
+- ### Publish to Azure:
 
 For deployment on Azure please follow this tutorial:
 https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs?pivots=isolated
